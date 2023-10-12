@@ -28,4 +28,11 @@ public class Stack {
     public Integer size() {
         return this.datas.size();
     }
+
+    public Long peek() {
+        if (datas.isEmpty()) return null;
+
+        int lastIndex = datas.size() - 1;
+        return this.datas.get(lastIndex);
+    }
 }

@@ -65,4 +65,20 @@ public class StackTest {
         Assertions.assertEquals(2, result);
         Assertions.assertEquals(1, size);
     }
+
+    @Test
+    void peek_shouldReturnLastDataWithoutDeleteIt_whenStackIsNotEmpty() {
+        Stack stack = new Stack(List.of(1L, 2L, 3L));
+        Long result = stack.peek();
+        Integer size = stack.size();
+        Assertions.assertEquals(3L, result);
+        Assertions.assertEquals(3, size);
+    }
+
+    @Test
+    void peek_shouldReturnNull_whenStackIsEmpty() {
+        Stack stack = new Stack();
+        Long result = stack.peek();
+        Assertions.assertEquals(null, result);
+    }
 }
