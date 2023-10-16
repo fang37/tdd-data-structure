@@ -3,25 +3,25 @@ package irfan.datastructure;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stack {
+public class Stack<E> {
 
-    private List<Long> datas = new ArrayList<>();
+    private List<E> datas = new ArrayList<>();
 
     public Stack(){};
 
-    public Stack(List<Long> datas) {
+    public Stack(List<E> datas) {
         this.datas.addAll(datas);
     }
 
-    public Long pop(){
+    public E pop(){
         if (datas.isEmpty()) return null;
         int lastIndex = datas.size() - 1;
-        Long data = datas.get(lastIndex);
+        E data = datas.get(lastIndex);
         this.datas.remove(lastIndex);
         return data;
     }
 
-    public void push(Long data) {
+    public void push(E data) {
         this.datas.add(data);
     }
 
@@ -29,7 +29,7 @@ public class Stack {
         return this.datas.size();
     }
 
-    public Long peek() {
+    public E peek() {
         if (datas.isEmpty()) return null;
 
         int lastIndex = datas.size() - 1;
