@@ -81,4 +81,20 @@ public class StackTest {
         Long result = stack.peek();
         Assertions.assertEquals(null, result);
     }
+
+    @Test
+    void clear_shouldDeleteAllData_whenStackIsNotEmpty() {
+        Stack stack = new Stack(List.of(1L, 2L, 3L, 4L, 5L));
+        stack.clear();
+        Integer result = stack.size();
+        Assertions.assertEquals(0, result);
+    }
+
+    @Test
+    void clear_shouldNotError_whenStackIsEmpty() {
+        Stack stack = new Stack();
+        stack.clear();
+        Integer result = stack.size();
+        Assertions.assertEquals(0, result);
+    }
 }

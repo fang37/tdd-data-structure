@@ -35,4 +35,8 @@ public class Stack {
         int lastIndex = datas.size() - 1;
         return this.datas.get(lastIndex);
     }
+
+    public void clear() {
+        this.datas.removeAll(datas);
+    }
 }
